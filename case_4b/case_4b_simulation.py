@@ -6,7 +6,7 @@ from CADETProcess.processModel import FlowSheet
 from CADETProcess.processModel import Process
 
 process_name = flow_sheet_name = 'serial_ternary'
-case_dir = 'case_4'
+case_dir = 'case_4b'
 
 # Binding Model
 binding_model = Langmuir(n_comp=3, name='langmuir')
