@@ -1,0 +1,136 @@
+{
+    "optimization_problem": "case_1",
+    "optimization_problem_parameters": {
+        "variables": {
+            "cycle_time": {
+                "lb": 10,
+                "ub": 600,
+                "component_index": null
+            },
+            "feed_duration.time": {
+                "lb": 10,
+                "ub": 100,
+                "component_index": null
+            }
+        },
+        "linear_constraints": [
+            {
+                "opt_vars": [
+                    "feed_duration.time",
+                    "cycle_time"
+                ],
+                "factors": [
+                    1,
+                    -1
+                ],
+                "b": 0
+            }
+        ]
+    },
+    "evaluation_object_parameters": {
+        "feed_on": {
+            "time": 0.0,
+            "state": 1e-06
+        },
+        "feed_duration": {
+            "time": 48.159
+        },
+        "cycle_time": 164.301,
+        "flow_sheet": {
+            "feed": {
+                "flow_rate": 0.0,
+                "reverse_flow": false
+            },
+            "eluent": {
+                "flow_rate": 1e-06,
+                "reverse_flow": false
+            },
+            "column": {
+                "flow_rate": 1e-06,
+                "reverse_flow": false,
+                "length": 0.6,
+                "diameter": 0.024,
+                "axial_dispersion": 4.7e-07,
+                "total_porosity": 0.7,
+                "bed_porosity": null,
+                "particle_porosity": null,
+                "particle_radius": null,
+                "film_diffusion": null,
+                "pore_diffusion": null,
+                "surface_diffusion": null,
+                "binding_model": {
+                    "adsorption_rate": [
+                        0.02,
+                        0.03
+                    ],
+                    "desorption_rate": [
+                        1,
+                        1
+                    ],
+                    "saturation_capacity": [
+                        100,
+                        100
+                    ]
+                },
+                "output_state": [
+                    1
+                ]
+            },
+            "outlet": {
+                "flow_rate": 0.0,
+                "reverse_flow": false,
+                "output_state": null
+            }
+        }
+    },
+    "x0": [
+        120.1,
+        82.4
+    ],
+    "solver_name": "DEAP",
+    "solver_parameters": {
+        "cxpb": 1,
+        "mutpb": 1,
+        "sig_figures": 3,
+        "seed": 12345
+    },
+    "exit_flag": 1,
+    "exit_message": "DEAP terminated successfully",
+    "time_elapsed": 8833.634661912918,
+    "x": [
+        164.301,
+        48.159
+    ],
+    "f": -0.09076529350443535,
+    "c": null,
+    "performance": {
+        "mass": [
+            0.0004174280704183713,
+            0.00039859144827749635
+        ],
+        "concentration": [
+            8.965589185611268,
+            4.011260256187166
+        ],
+        "purity": [
+            0.9499999601971065,
+            0.9499999917501084
+        ],
+        "recovery": [
+            0.866770635641046,
+            0.8276572359839207
+        ],
+        "productivity": [
+            0.03120014222259434,
+            0.029792222316298782
+        ],
+        "eluent_consumption": [
+            3.5941181520756604,
+            3.431932016647693
+        ]
+    },
+    "git": {
+        "chromapy_branch": "master",
+        "chromapy_commit": "4812844d3df0d442357021a8ccececa2c980b855"
+    }
+}
