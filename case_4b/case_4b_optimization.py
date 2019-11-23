@@ -43,7 +43,7 @@ optimization_problem.add_linear_constraint(
         factors=[1,-1, -1], b=0)
 
 if __name__ == "__main__":
-    from chromapy.optimization import DEAP as Solver
+    from CADETProcess.optimization import DEAP as Solver
 
     opt_solver = Solver()
     results = opt_solver.optimize(optimization_problem, save_results=True)
