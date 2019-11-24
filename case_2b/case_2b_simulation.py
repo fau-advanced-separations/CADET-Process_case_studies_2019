@@ -22,7 +22,7 @@ eluent = Source(n_comp=3, name='eluent')
 eluent.c = [0, 0, 0]
 
 column = Column(n_comp=3, name='column')
-column.length = 0.2
+column.length = 0.1
 column.diameter = 0.024
 column.axial_dispersion = 4.7e-7
 column.total_porosity = 0.7
@@ -60,8 +60,8 @@ batch_long_ternary.add_event_dependency('eluent_on', ['feed_off'])
 batch_long_ternary.add_event_dependency('eluent_off', ['feed_on'])
 batch_long_ternary.add_event_dependency('feed_off', ['feed_on', 'feed_duration'], [1,1])
 
-batch_long_ternary.cycle_time = 220.1
-batch_long_ternary.feed_duration.time = 69.4
+batch_long_ternary.cycle_time = 113.48
+batch_long_ternary.feed_duration.time = 31.668
 
 
 if __name__ == '__main__':
