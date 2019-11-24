@@ -1,0 +1,277 @@
+{
+    "optimization_problem": "case_4",
+    "optimization_problem_parameters": {
+        "variables": {
+            "cycle_time": {
+                "lb": 10,
+                "ub": 600,
+                "component_index": null
+            },
+            "feed_duration.time": {
+                "lb": 10,
+                "ub": 100,
+                "component_index": null
+            },
+            "serial_on.time": {
+                "lb": 0,
+                "ub": 600,
+                "component_index": null
+            },
+            "serial_off.time": {
+                "lb": 0,
+                "ub": 600,
+                "component_index": null
+            },
+            "flow_sheet.column_1.length": {
+                "lb": 0.1,
+                "ub": 1.2,
+                "component_index": null
+            },
+            "flow_sheet.column_2.length": {
+                "lb": 0.1,
+                "ub": 1.2,
+                "component_index": null
+            }
+        },
+        "linear_constraints": [
+            {
+                "opt_vars": [
+                    "flow_sheet.column_1.length",
+                    "flow_sheet.column_2.length"
+                ],
+                "factors": [
+                    1,
+                    1
+                ],
+                "b": 1.2
+            },
+            {
+                "opt_vars": [
+                    "feed_duration.time",
+                    "cycle_time"
+                ],
+                "factors": [
+                    1,
+                    -1
+                ],
+                "b": 0
+            },
+            {
+                "opt_vars": [
+                    "serial_on.time",
+                    "cycle_time"
+                ],
+                "factors": [
+                    1,
+                    -2
+                ],
+                "b": 0
+            },
+            {
+                "opt_vars": [
+                    "serial_off.time",
+                    "serial_on.time"
+                ],
+                "factors": [
+                    1,
+                    -1
+                ],
+                "b": 0
+            },
+            {
+                "opt_vars": [
+                    "serial_on.time",
+                    "serial_off.time",
+                    "cycle_time"
+                ],
+                "factors": [
+                    1,
+                    -1,
+                    -1
+                ],
+                "b": 0
+            }
+        ]
+    },
+    "evaluation_object_parameters": {
+        "feed_on": {
+            "time": 0.0,
+            "state": 1e-06
+        },
+        "serial_off": {
+            "time": 47.634,
+            "state": [
+                1,
+                0
+            ]
+        },
+        "serial_on": {
+            "time": 119.017,
+            "state": [
+                0,
+                1
+            ]
+        },
+        "feed_duration": {
+            "time": 45.859
+        },
+        "cycle_time": 210.121,
+        "flow_sheet": {
+            "feed": {
+                "flow_rate": 0.0,
+                "reverse_flow": false
+            },
+            "eluent_1": {
+                "flow_rate": 1e-06,
+                "reverse_flow": false
+            },
+            "eluent_2": {
+                "flow_rate": 0.0,
+                "reverse_flow": false
+            },
+            "column_1": {
+                "flow_rate": 1e-06,
+                "reverse_flow": false,
+                "length": 0.286,
+                "diameter": 0.024,
+                "axial_dispersion": 4.7e-07,
+                "total_porosity": 0.7,
+                "bed_porosity": null,
+                "particle_porosity": null,
+                "particle_radius": null,
+                "film_diffusion": null,
+                "pore_diffusion": null,
+                "surface_diffusion": null,
+                "binding_model": {
+                    "adsorption_rate": [
+                        0.01,
+                        0.015,
+                        0.03
+                    ],
+                    "desorption_rate": [
+                        1,
+                        1,
+                        1
+                    ],
+                    "saturation_capacity": [
+                        100,
+                        100,
+                        200
+                    ]
+                },
+                "output_state": [
+                    0,
+                    1
+                ]
+            },
+            "column_2": {
+                "flow_rate": 1e-06,
+                "reverse_flow": false,
+                "length": 0.593,
+                "diameter": 0.024,
+                "axial_dispersion": 4.7e-07,
+                "total_porosity": 0.7,
+                "bed_porosity": null,
+                "particle_porosity": null,
+                "particle_radius": null,
+                "film_diffusion": null,
+                "pore_diffusion": null,
+                "surface_diffusion": null,
+                "binding_model": {
+                    "adsorption_rate": [
+                        0.01,
+                        0.015,
+                        0.03
+                    ],
+                    "desorption_rate": [
+                        1,
+                        1,
+                        1
+                    ],
+                    "saturation_capacity": [
+                        100,
+                        100,
+                        200
+                    ]
+                },
+                "output_state": [
+                    1
+                ]
+            },
+            "outlet_1": {
+                "flow_rate": 0.0,
+                "reverse_flow": false,
+                "output_state": null
+            },
+            "outlet_2": {
+                "flow_rate": 0.0,
+                "reverse_flow": false,
+                "output_state": null
+            }
+        }
+    },
+    "x0": [
+        436.9,
+        33.3,
+        470.6,
+        400.9,
+        0.4,
+        0.6
+    ],
+    "solver_name": "DEAP",
+    "solver_parameters": {
+        "cxpb": 1,
+        "mutpb": 1,
+        "sig_figures": 3,
+        "seed": 12345
+    },
+    "exit_flag": 1,
+    "exit_message": "DEAP terminated successfully",
+    "time_elapsed": 72478.26101112366,
+    "x": [
+        210.121,
+        45.859,
+        119.017,
+        47.634,
+        0.286,
+        0.593
+    ],
+    "f": -0.024013046663819777,
+    "c": null,
+    "performance": {
+        "mass": [
+            0.0004029586873803649,
+            0.0004013770000938004,
+            0.0
+        ],
+        "concentration": [
+            9.478739786827333,
+            5.139502904310987,
+            0.0
+        ],
+        "purity": [
+            0.9499999872570013,
+            0.9499999999494037,
+            0.0
+        ],
+        "recovery": [
+            0.8786905239546543,
+            0.8752415013275484,
+            0.0
+        ],
+        "productivity": [
+            0.016075651015066045,
+            0.016012551115175373,
+            0.0
+        ],
+        "eluent_consumption": [
+            1.7100243475582546,
+            1.7033121861011287,
+            0.0
+        ]
+    },
+    "git": {
+        "chromapy_branch": "master",
+        "chromapy_commit": "4812844d3df0d442357021a8ccececa2c980b855"
+    }
+}

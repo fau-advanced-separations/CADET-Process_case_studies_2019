@@ -6,7 +6,7 @@ from CADETProcess.processModel import FlowSheet
 from CADETProcess.processModel import Process
 
 process_name = flow_sheet_name = 'serial_ternary'
-case_dir = 'case_4b'
+case_dir = 'case_4'
 
 # Binding Model
 binding_model = Langmuir(n_comp=3, name='langmuir')
@@ -25,7 +25,7 @@ eluent_2 = Source(n_comp=3, name='eluent_2')
 eluent_2.c = [0, 0, 0]
 
 column_1 = Column(n_comp=3, name='column_1')
-column_1.length = 0.3
+column_1.length = 0.286
 column_1.diameter = 0.024
 column_1.axial_dispersion = 4.7e-7
 column_1.total_porosity = 0.7
@@ -33,7 +33,7 @@ column_1.total_porosity = 0.7
 column_1.binding_model = binding_model
 
 column_2 = Column(n_comp=3, name='column_2')
-column_2.length = 0.3
+column_2.length = 0.593
 column_2.diameter = 0.024
 column_2.axial_dispersion = 4.7e-7
 column_2.total_porosity = 0.7
@@ -88,11 +88,10 @@ serial_ternary.add_event_dependency('eluent_2_on', ['serial_off'], [1])
 serial_ternary.add_event_dependency('eluent_2_off', ['serial_on'], [1])
 
 # Set process times
-serial_ternary.cycle_time = 222.5
-serial_ternary.feed_duration.time = 30.8
-serial_ternary.serial_off.time = 310.5
-serial_ternary.serial_on.time = 310.7
-
+serial_ternary.cycle_time = 210.121
+serial_ternary.feed_duration.time = 45.859
+serial_ternary.serial_on.time = 119.017
+serial_ternary.serial_off.time = 47.634
 
 if __name__ == '__main__':
     from CADETProcess.simulation import Cadet
