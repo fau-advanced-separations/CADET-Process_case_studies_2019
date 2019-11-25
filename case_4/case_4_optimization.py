@@ -24,19 +24,23 @@ optimization_problem.objective_fun = objective_function
 
 optimization_problem.add_variable('cycle_time', lb=10, ub=600)
 optimization_problem.add_variable('feed_duration.time', lb=10, ub=100)
-optimization_problem.add_variable('serial_off.time', lb=0, ub=600)
 optimization_problem.add_variable('serial_on.time', lb=0, ub=600)
+optimization_problem.add_variable('serial_off.time', lb=0, ub=600)
+optimization_problem.add_variable('flow_sheet.column_1.length', lb=0.1, ub=1.2)
+optimization_problem.add_variable('flow_sheet.column_2.length', lb=0.1, ub=1.2)
 
+optimization_problem.add_linear_constraint(
+        opt_vars=['flow_sheet.column_1.length', 'flow_sheet.column_2.length'], 
+        factors=[1,1], b=1.2)
 optimization_problem.add_linear_constraint(
         opt_vars=['feed_duration.time', 'cycle_time'], factors=[1,-1], b=0)
 optimization_problem.add_linear_constraint(
-        opt_vars=['serial_on.time', 'serial_off.time', 'cycle_time'],
-        factors=[1,-1, -1], b=0)
+        opt_vars=['serial_on.time', 'cycle_time'], factors=[1,-2], b=0)
 optimization_problem.add_linear_constraint(
         opt_vars=['serial_off.time', 'serial_on.time'], factors=[1,-1], b=0)
 optimization_problem.add_linear_constraint(
-        opt_vars=['serial_on.time', 'cycle_time'], factors=[1,-2], b=0)
-
+        opt_vars=['serial_on.time', 'serial_off.time', 'cycle_time'],
+        factors=[1,-1, -1], b=0)
 
 if __name__ == "__main__":
     from CADETProcess.optimization import DEAP as Solver

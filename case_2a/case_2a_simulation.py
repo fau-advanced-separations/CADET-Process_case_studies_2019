@@ -60,8 +60,8 @@ batch_long_ternary.add_event_dependency('eluent_on', ['feed_off'])
 batch_long_ternary.add_event_dependency('eluent_off', ['feed_on'])
 batch_long_ternary.add_event_dependency('feed_off', ['feed_on', 'feed_duration'], [1,1])
 
-batch_long_ternary.cycle_time = 447.5
-batch_long_ternary.feed_duration.time = 67.0
+batch_long_ternary.cycle_time = 449.176
+batch_long_ternary.feed_duration.time = 66.753
 
 
 if __name__ == '__main__':

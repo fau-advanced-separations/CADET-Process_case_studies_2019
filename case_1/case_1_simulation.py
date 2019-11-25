@@ -61,8 +61,8 @@ batch_binary.add_event_dependency('eluent_off', ['feed_on'])
 batch_binary.add_event_dependency('feed_off', ['feed_on', 'feed_duration'],[1,1])
 
 # Set process times
-batch_binary.cycle_time = 165.2
-batch_binary.feed_duration.time = 47.8
+batch_binary.cycle_time = 164.301
+batch_binary.feed_duration.time = 48.159
 
 
 if __name__ == '__main__':
