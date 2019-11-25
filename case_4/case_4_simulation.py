@@ -105,5 +105,5 @@ if __name__ == '__main__':
     serial_ternary_frac = optimize_fractionation(
             serial_ternary_sim_results.chromatograms,
             serial_ternary.process_meta,
-            purity_required=0.95)
+            purity_required=[0.95, 0.95, 0])
     serial_ternary_frac.save(case_dir)
