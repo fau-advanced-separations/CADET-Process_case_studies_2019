@@ -77,10 +77,10 @@ ssr_binary.add_event_dependency(
         [1,1,1,-1])
 
 # Set process times
-ssr_binary.cycle_time = 163.2
-ssr_binary.feed_duration.time = 40.7
-ssr_binary.recycle_on.time = 198.5
-ssr_binary.recycle_off.time = 208.3
+ssr_binary.cycle_time = 163.191
+ssr_binary.feed_duration.time = 43.185
+ssr_binary.recycle_on.time = 198.456
+ssr_binary.recycle_off.time = 200.92
 
 
 if __name__ == '__main__':
