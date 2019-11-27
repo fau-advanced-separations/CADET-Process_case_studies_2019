@@ -75,4 +75,4 @@ if __name__ == '__main__':
             batch_ternary_sim_results.chromatograms,
             batch_ternary.process_meta,
             purity_required=0.95)
-    batch_ternary_frac.save(case_dir, start=1.9)
+    batch_ternary_frac.save(case_dir, start=2.5)
