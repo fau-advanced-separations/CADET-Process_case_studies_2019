@@ -8,6 +8,7 @@ from case_3a_simulation import ssr_binary
 
 process_simulator = Cadet()
 process_simulator.evaluate_stationarity = True
+process_simulator.n_cycles_min = 4
 
 ranking = [1, 1]
 purity_required = [0.95, 0.95]
