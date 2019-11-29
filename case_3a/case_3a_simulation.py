@@ -77,17 +77,17 @@ ssr_binary.add_event_dependency(
         [1,1,1,-1])
 
 # Set process times
-ssr_binary.cycle_time = 163.191
-ssr_binary.feed_duration.time = 43.185
-ssr_binary.recycle_on.time = 198.456
-ssr_binary.recycle_off.time = 200.92
+ssr_binary.cycle_time = 191.11
+ssr_binary.feed_duration.time = 42.956
+ssr_binary.recycle_on.time = 354.081
+ssr_binary.recycle_off.time = 358.552
 
 
 if __name__ == '__main__':
     from CADETProcess.simulation import Cadet
     process_simulator = Cadet()
     process_simulator.evaluate_stationarity = True
-
+    process_simulator.n_cycles_min = 4
     ssr_binary_sim_results = process_simulator.simulate(ssr_binary)
     ssr_binary_sim_results.save(case_dir)
 
