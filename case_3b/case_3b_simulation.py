@@ -6,7 +6,7 @@ from CADETProcess.processModel import FlowSheet
 from CADETProcess.processModel import Process
 
 process_name = flow_sheet_name = 'ssr_binary'
-case_dir = 'case_3a'
+case_dir = 'case_3b'
 
 # Binding Model
 binding_model = Langmuir(n_comp=2, name='langmuir')
@@ -77,10 +77,10 @@ ssr_binary.add_event_dependency(
         [1,1,1,-1])
 
 # Set process times
-ssr_binary.cycle_time = 163.191
-ssr_binary.feed_duration.time = 43.185
-ssr_binary.recycle_on.time = 198.456
-ssr_binary.recycle_off.time = 200.92
+ssr_binary.cycle_time = 195.472
+ssr_binary.feed_duration.time = 36.136
+ssr_binary.recycle_on.time = 360.395
+ssr_binary.recycle_off.time = 366.771
 
 
 if __name__ == '__main__':
