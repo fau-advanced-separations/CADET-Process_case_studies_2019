@@ -1,5 +1,5 @@
 {
-    "optimization_problem": "case_1",
+    "optimization_problem": "case_1b",
     "optimization_problem_parameters": {
         "variables": {
             "cycle_time": {
@@ -33,9 +33,9 @@
             "state": 1e-06
         },
         "feed_duration": {
-            "time": 48.159
+            "time": 46.463
         },
-        "cycle_time": 164.301,
+        "cycle_time": 192.163,
         "flow_sheet": {
             "feed": {
                 "flow_rate": 0.0,
@@ -50,7 +50,7 @@
                 "reverse_flow": false,
                 "length": 0.6,
                 "diameter": 0.024,
-                "axial_dispersion": 4.7e-07,
+                "axial_dispersion": 2.4e-06,
                 "total_porosity": 0.7,
                 "bed_porosity": null,
                 "particle_porosity": null,
@@ -84,8 +84,8 @@
         }
     },
     "x0": [
-        120.1,
-        82.4
+        386.0,
+        91.9
     ],
     "solver_name": "DEAP",
     "solver_parameters": {
@@ -96,41 +96,41 @@
     },
     "exit_flag": 1,
     "exit_message": "DEAP terminated successfully",
-    "time_elapsed": 8833.634661912918,
+    "time_elapsed": 1842.294733762741,
     "x": [
-        164.301,
-        48.159
+        192.163,
+        46.463
     ],
-    "f": -0.09076529350443535,
+    "f": -0.03819774421080613,
     "c": null,
     "performance": {
         "mass": [
-            0.0004174280704183713,
-            0.00039859144827749635
+            0.0003558652031780548,
+            0.00033075468838888463
         ],
         "concentration": [
-            8.965589185611268,
-            4.011260256187166
+            7.657313332697358,
+            3.1040078678709087
         ],
         "purity": [
-            0.9499999601971065,
-            0.9499999917501084
+            0.9499999943783625,
+            0.9499999908237139
         ],
         "recovery": [
-            0.866770635641046,
-            0.8276572359839207
+            0.7659109467276216,
+            0.7118668368139911
         ],
         "productivity": [
-            0.03120014222259434,
-            0.029792222316298782
+            0.022742116726725742,
+            0.021137390405344576
         ],
         "eluent_consumption": [
-            3.5941181520756604,
-            3.431932016647693
+            2.442451634715544,
+            2.2701076759703813
         ]
     },
     "git": {
         "chromapy_branch": "master",
-        "chromapy_commit": "4812844d3df0d442357021a8ccececa2c980b855"
+        "chromapy_commit": "8f6029ce5bb11e612d33b9c1dd2d20186acc0ded"
     }
 }

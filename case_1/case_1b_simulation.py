@@ -6,7 +6,7 @@ from CADETProcess.processModel import FlowSheet
 from CADETProcess.processModel import Process
 
 process_name = flow_sheet_name = 'batch_binary'
-case_dir = 'case_1'
+case_dir = 'case_1b'
 
 # Binding Model
 binding_model = Langmuir(n_comp=2, name='langmuir')
@@ -24,7 +24,7 @@ eluent.c = [0, 0]
 column = Column(n_comp=2, name='column')
 column.length = 0.6
 column.diameter = 0.024
-column.axial_dispersion = 4.7e-7
+column.axial_dispersion = 2.4e-6
 column.total_porosity = 0.7
 
 column.binding_model = binding_model
@@ -61,8 +61,8 @@ batch_binary.add_event_dependency('eluent_off', ['feed_on'])
 batch_binary.add_event_dependency('feed_off', ['feed_on', 'feed_duration'],[1,1])
 
 # Set process times
-batch_binary.cycle_time = 164.301
-batch_binary.feed_duration.time = 48.159
+batch_binary.cycle_time = 192.163
+batch_binary.feed_duration.time = 46.463
 
 
 if __name__ == '__main__':

@@ -4,7 +4,7 @@ from CADETProcess.simulation import Cadet, ProcessEvaluator
 from CADETProcess.optimization import OptimizationProblem
 from CADETProcess.common import RankedPerformance
 
-from case_1_simulation import batch_binary
+from case_1b_simulation import batch_binary
 
 process_simulator = Cadet()
 process_simulator.evaluate_stationarity = True
@@ -14,7 +14,7 @@ purity_required = [0.95, 0.95]
 evaluator = ProcessEvaluator(process_simulator, purity_required, ranking)
 
 optimization_problem = OptimizationProblem(batch_binary, evaluator,
-                                           name='case_1', save_log=True)
+                                           name='case_1b', save_log=True)
 
 def objective_function(performance):
     ranked = RankedPerformance(performance, ranking)
